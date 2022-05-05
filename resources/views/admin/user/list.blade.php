@@ -33,7 +33,7 @@
                                             <tr>
                                                 <td>{{$us->name}}</td>
                                                 <td>{{$us->email}}</td>
-                                                <td>{{$us->number_phone}}</td>
+                                                <td>{{$us->number_phone}}</td>trii
                                                 <td>
                                                     @if($us->level == 1)
                                                         {{"Admin"}}
