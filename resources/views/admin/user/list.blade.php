@@ -24,6 +24,7 @@
                                                 <th>Email</th>
                                                 <th>Sđt</th>
                                                 <th>Level</th>
+                                                <th>Created</th>
                                                 <th class="text-right">Edit</th>
                                                 <th class="text-right">Delete</th>
                                             </tr>
@@ -33,7 +34,7 @@
                                             <tr>
                                                 <td>{{$us->name}}</td>
                                                 <td>{{$us->email}}</td>
-                                                <td>{{$us->number_phone}}</td>trii
+                                                <td>{{$us->number_phone}}</td>
                                                 <td>
                                                     @if($us->level == 1)
                                                         {{"Admin"}}
@@ -44,8 +45,9 @@
 
                                                     @endif
                                                 </td>
-                                                <td class="text-right"><a href="admin/user/suauser/{{$us['id']}}">Exit</a></td>
-                                                <td class="text-right"><a href="admin/user/xoauser/{{$us['id']}}">Delete</a> </td>
+                                                <td>{{$us->created_at}}</td>
+                                                <td class="text-right"><a href="admin/user/suauser/{{$us->id}}">Edit</a></td>
+                                                <td class="text-right"><a href="admin/user/xoauser/{{$us->id}}">Delete</a> </td>
                                             </tr>
                                             @endforeach
                                         </tbody>

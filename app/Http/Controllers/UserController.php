@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-
-use function Ramsey\Uuid\v1;
 
 class UserController extends Controller
 {
@@ -43,6 +41,9 @@ class UserController extends Controller
 
     public function list(){
         $user = User::all();
+        $user = DB::table('users')
+                ->orderByRaw('created_at DESC')
+                ->get();
         return view('admin.user.list',compact('user'));
     }
 
